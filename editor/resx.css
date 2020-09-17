@@ -1,0 +1,35 @@
+* {
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+input {
+    color: inherit;
+    background-color: inherit;
+    width:100%;
+    font: inherit;
+    height: 100%;
+    padding: 8px;
+    border: 0;
+}
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+th {
+    background-color: var(--vscode-editor-background);
+    position: sticky;
+    top: 0;
+    font-size: 1.2em;
+    padding: 8px;
+    border: 1px solid;
+    border-color: inherit;
+}
+td {
+    border: 1px solid;
+    border-color: inherit;
+}
+tr:nth-child(odd) td {
+    background-color: var(--vscode-sideBar-background);
+}
