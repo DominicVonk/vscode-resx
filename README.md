@@ -1,3 +1,5 @@
 # ResX Editor
 
-To edit resx files in  vscode
+A visual editor for .resx files
+
+![screenshot](screen.png)

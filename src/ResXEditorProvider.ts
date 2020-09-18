@@ -3,18 +3,7 @@ import * as vscode from 'vscode';
 import { getNonce } from './util';
 import resx from 'resx';
 
-/**
- * Provider for cat scratch editors.
- * 
- * Cat scratch editors are used for `.cscratch` files, which are just json files.
- * To get started, run this extension and open an empty `.cscratch` file in VS Code.
- * 
- * This provider demonstrates:
- * 
- * - Setting up the initial webview for a custom editor.
- * - Loading scripts and styles in a custom editor.
- * - Synchronizing changes between a text document and a custom editor.
- */
+
 export class ResXEditorProvider implements vscode.CustomTextEditorProvider {
 
     public static register(context: vscode.ExtensionContext): vscode.Disposable {
@@ -141,33 +130,7 @@ export class ResXEditorProvider implements vscode.CustomTextEditorProvider {
      * Add a new scratch to the current document.
      */
     private newChange(document: vscode.TextDocument, json: any) {
-        /* const json = this.getDocumentAsJson(document);
-         json.scratches = [
-             ...(Array.isArray(json.scratches) ? json.scratches : []),
-             {
-                 id: getNonce(),
-                 text: character,
-                 created: Date.now(),
-             }
-         ];
- */
         return this.updateTextDocument(document, json);
-    }
-
-    /**
-     * Try to get a current document as json text.
-     */
-    private getDocumentAsJson(document: vscode.TextDocument): any {
-        const text = document.getText();
-        if (text.trim().length === 0) {
-            return {};
-        }
-
-        try {
-            return JSON.parse(text);
-        } catch {
-            throw new Error('Could not get document as json. Content is not valid json');
-        }
     }
 
     /**

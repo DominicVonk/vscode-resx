@@ -1,6 +1,6 @@
 {
 	"name": "vscode-resx-editor",
-	"displayName": "ResX",
+	"displayName": "ResX Editor",
 	"description": "ResX Editor",
 	"version": "0.0.1",
 	"engines": {
@@ -13,6 +13,11 @@
 	"activationEvents": [
 		"onCustomEditor:resx.editor"
 	],
+	"icon": "resx.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/DominicVonk/vscode-resx.git"
+	},
 	"main": "./out/extension.js",
 	"contributes": {
 		"customEditors": [
