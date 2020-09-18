@@ -17,10 +17,73 @@
     document.body.appendChild(errorContainer);
     errorContainer.className = 'error'
     errorContainer.style.display = 'none'
-
     /**
      * Render the document in the webview.
      */
+    let inputEvent = () => {
+        let obj = {};
+        let a = notesContainer.querySelectorAll('tr');
+        for (let rule of a) {
+            let inputs = rule.querySelectorAll('input');
+            if (inputs[0].value && inputs[1].value) {
+                obj[inputs[0].value] = {
+                    value: inputs[1].value,
+                    comment: inputs[2].value
+                }
+            }
+        }
+        vscode.setState({ text: JSON.stringify(obj) });
+        vscode.postMessage({
+            type: 'update',
+            json: JSON.stringify(obj)
+        });
+    };
+
+    let deleteEvent = (self) => {
+        self.remove();
+        let obj = {};
+        let a = notesContainer.querySelectorAll('tr');
+        for (let rule of a) {
+            let inputs = rule.querySelectorAll('input');
+            if (inputs[0].value && inputs[1].value) {
+                obj[inputs[0].value] = {
+                    value: inputs[1].value,
+                    comment: inputs[2].value
+                }
+            }
+        }
+        vscode.setState({ text: JSON.stringify(obj) });
+        vscode.postMessage({
+            type: 'update',
+            json: JSON.stringify(obj)
+        });
+    }
+    document.querySelector('.plus').addEventListener('click', () => {
+        const element = document.createElement('tr');
+        notesContainer.appendChild(element);
+
+        const name = document.createElement('td');
+        const __name = document.createElement('input');
+        __name.oninput = inputEvent;
+        name.appendChild(__name);
+        __name.value = '';
+        const value = document.createElement('td');
+        const _value = document.createElement('input');
+        value.appendChild(_value);
+        _value.value = '';
+        _value.oninput = inputEvent;
+        const comment = document.createElement('td');
+        const _comment = document.createElement('input');
+        comment.appendChild(_comment);
+        _comment.value = '';
+        _comment.oninput = inputEvent;
+        const drop = document.createElement('td');
+        drop.innerHTML = '&times;';
+        drop.onclick = () => deleteEvent(element);
+        element.append(name, value, comment, drop);
+        name.focus();
+        element.scrollIntoView();
+    });
     function updateContent(/** @type {string} */ text) {
         let json;
         try {
@@ -33,22 +96,7 @@
         }
         notesContainer.style.display = '';
         errorContainer.style.display = 'none';
-        let inputEvent = () => {
-            let obj = {};
-            let a = notesContainer.querySelectorAll('tr');
-            for (let rule of a) {
-                let inputs = rule.querySelectorAll('input');
-                obj[inputs[0].value] = {
-                    value: inputs[1].value,
-                    comment: inputs[2].value
-                }
-            }
-            vscode.setState({ text: JSON.stringify(obj) });
-            vscode.postMessage({
-                type: 'update',
-                json: JSON.stringify(obj)
-            });
-        };
+
         // Render the scratches
         notesContainer.innerHTML = '';
         for (const _name in json || []) {
@@ -71,7 +119,10 @@
             comment.appendChild(_comment);
             _comment.value = rule.comment || '';
             _comment.oninput = inputEvent;
-            element.append(name, value, comment);
+            const drop = document.createElement('td');
+            drop.innerHTML = '&times;';
+            drop.onclick = () => deleteEvent(element);
+            element.append(name, value, comment, drop);
         }
 
     }

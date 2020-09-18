@@ -6,6 +6,7 @@
 	"engines": {
 		"vscode": "^1.49.0"
 	},
+	"publisher": "DominicVonk",
 	"categories": [
 		"Other"
 	],

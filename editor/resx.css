@@ -33,3 +33,19 @@ td {
 tr:nth-child(odd) td {
     background-color: var(--vscode-sideBar-background);
 }
+.plus {
+    background-color: var(--vscode-editor-background);
+    position: sticky;
+    bottom: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+td:last-child {
+    vertical-align: center;
+   text-align: center; 
+    font-size: 1.2rem;
+    cursor: pointer;
+}

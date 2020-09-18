@@ -122,10 +122,14 @@ export class ResXEditorProvider implements vscode.CustomTextEditorProvider {
                     <th>Name</th>
                     <th>Value</th>
                     <th>Comment</th>
+                    <th></th>
                 </thead>
                 <tbody>
 
                 </tbody>
+                <tfoot>
+                    <th colspan="4" class="plus">+ Add</th>
+                </tfoot>
                 </table>
 				
 				<script nonce="${nonce}" src="${scriptUri}"></script>
