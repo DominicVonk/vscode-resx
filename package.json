@@ -2,7 +2,7 @@
 	"name": "vscode-resx-editor",
 	"displayName": "ResX Editor",
 	"description": "ResX Editor",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"engines": {
 		"vscode": "^1.49.0"
 	},
