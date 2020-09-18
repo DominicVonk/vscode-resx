@@ -10,6 +10,9 @@
 	"categories": [
 		"Other"
 	],
+	"keywords": [
+		"resx"
+	],
 	"activationEvents": [
 		"onCustomEditor:resx.editor"
 	],
