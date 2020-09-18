@@ -13,6 +13,14 @@
 	"activationEvents": [
 		"onCustomEditor:resx.editor"
 	],
+	"bugs": {
+		"url": "https://github.com/DominicVonk/vscode-resx/issues"
+	},
+	"license": "MIT",
+	"galleryBanner": {
+		"color": "#fff",
+		"theme": "light"
+	},
 	"icon": "resx.png",
 	"repository": {
 		"type": "git",
