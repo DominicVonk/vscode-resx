@@ -11,7 +11,8 @@
 		"Other"
 	],
 	"keywords": [
-		"resx"
+		"resx",
+		"resw"
 	],
 	"activationEvents": [
 		"onCustomEditor:resx.editor"
@@ -38,6 +39,9 @@
 				"selector": [
 					{
 						"filenamePattern": "*.resx"
+					},
+					{
+						"filenamePattern": "*.resw"
 					}
 				],
 				"priority": "default"
@@ -47,7 +51,8 @@
 			{
 				"id": "xml",
 				"extensions": [
-					".resx"
+					".resx",
+					".resw"
 				]
 			}
 		]
