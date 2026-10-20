@@ -1,51 +1,10 @@
-* {
-box-sizing: border-box;
-padding: 0;
-margin: 0;
-}
-input {
-    color: inherit;
-    background-color: inherit;
-    width:100%;
-    font: inherit;
-    height: 100%;
-    padding: 8px;
-    border: 0;
-}
-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-}
-th {
-    background-color: var(--vscode-editor-background);
-    position: sticky;
-    top: 0;
-    font-size: 1.2em;
-    padding: 8px;
-    border: 1px solid;
-    border-color: inherit;
-}
-td {
-    border: 1px solid;
-    border-color: inherit;
-}
-tr:nth-child(odd) td {
-    background-color: var(--vscode-sideBar-background);
-}
-.plus {
-    background-color: var(--vscode-editor-background);
-    position: sticky;
-    bottom: 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-}
-
-td:last-child {
-    vertical-align: center;
-   text-align: center; 
-    font-size: 1.2rem;
-    cursor: pointer;
-}
+* { box-sizing: border-box; }
+body { color: var(--vscode-editor-foreground); background: var(--vscode-editor-background); font-family: var(--vscode-font-family); }
+table { width: 100%; border-collapse: collapse; }
+th { position: sticky; top: 0; background: var(--vscode-editor-background); text-align: left; padding: 8px; }
+td { border: 1px solid var(--vscode-panel-border); padding: 6px; vertical-align: top; min-width: 220px; }
+input, textarea { display: block; width: 100%; color: var(--vscode-input-foreground); background: var(--vscode-input-background); border: 1px solid var(--vscode-input-border, transparent); padding: 6px; font: inherit; margin-bottom: 4px; }
+textarea { min-height: 64px; resize: vertical; white-space: pre-wrap; }
+button { color: var(--vscode-button-foreground); background: var(--vscode-button-background); border: 0; padding: 6px 12px; cursor: pointer; }
+button:disabled { opacity: .5; cursor: default; }
+#error { color: var(--vscode-errorForeground); }

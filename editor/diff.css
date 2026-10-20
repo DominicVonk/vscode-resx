@@ -1,0 +1,12 @@
+body { font-family: var(--vscode-font-family); color: var(--vscode-editor-foreground); background: var(--vscode-editor-background); }
+label { margin-right: 16px; }
+input, button { font: inherit; color: inherit; background: var(--vscode-input-background); border: 1px solid var(--vscode-panel-border); padding: 5px; }
+table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+th, td { border: 1px solid var(--vscode-panel-border); padding: 10px; vertical-align: top; text-align: left; overflow-wrap: anywhere; }
+th:first-child { width: 20%; }
+td:first-child, pre { white-space: pre-wrap; overflow-wrap: anywhere; margin: 0 0 8px; }
+.added { background: var(--vscode-diffEditor-insertedLineBackground); }
+.removed { background: var(--vscode-diffEditor-removedLineBackground); }
+.changed td:first-child { color: var(--vscode-gitDecoration-modifiedResourceForeground); }
+.comment { opacity: .8; }
+#error { color: var(--vscode-errorForeground); }
